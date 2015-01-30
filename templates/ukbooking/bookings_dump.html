@@ -1,0 +1,7 @@
+<table width="100%">
+{% for booking in booking_list %}
+<tr><td>{{ booking }}</td><td>{{ booking.visit }}</td></tr>
+{% empty %}
+<tr><td>No bookings.</td></tr>
+{% endfor %}
+</table>

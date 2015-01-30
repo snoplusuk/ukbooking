@@ -1,0 +1,15 @@
+{% extends 'ukbooking/base.html' %}
+{% block head_title %}UK Visit Booking{% endblock %}
+{% block content %}
+Booking a room in the UK apartments requires you to first enter your SNOLAB visit details (dates) using the form below, and then email <a href="mailto:p.g.jones@qmul.ac.uk">p.g.jones@qmul.ac.uk</a> requesting a room. 
+Ideally you should check which rooms are free before emailing.
+{% if form %}
+<form action="{% url 'book_visit' %}" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% else %}
+Thanks!<br />
+<a href="{% url 'index' %}">Return</a>
+{% endif %}
+{% endblock %}
